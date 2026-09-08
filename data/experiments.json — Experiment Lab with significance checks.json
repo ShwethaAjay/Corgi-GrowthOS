@@ -1,0 +1,44 @@
+{
+  "experiments": [
+    {
+      "experiment_id": "ent_vs_gen_ggl",
+      "name": "Enterprise-readiness messaging vs. generic speed messaging (Google Search, AI founders)",
+      "hypothesis": "AI startup founders shown 'Be ready for your next enterprise contract' messaging will produce a higher qualified-lead rate than those shown 'Get startup insurance in minutes', because enterprise-readiness connects insurance to an urgent buying trigger.",
+      "primary_metric": "Qualified-lead rate (qualified leads / landing-page visits)",
+      "guardrail_metrics": [
+        "Cost per lead",
+        "Form completion rate",
+        "Quote-start rate"
+      ],
+      "control": {
+        "message": "Get startup insurance in minutes.",
+        "campaign": "C-GGL-GEN",
+        "visits": 289,
+        "qualified_leads": 20,
+        "qualified_lead_rate": 0.0692
+      },
+      "treatment": {
+        "message": "Be ready for your next enterprise contract.",
+        "campaign": "C-GGL-ENT",
+        "visits": 230,
+        "qualified_leads": 23,
+        "qualified_lead_rate": 0.1
+      },
+      "statistics": {
+        "control_rate": 0.0692,
+        "treatment_rate": 0.1,
+        "absolute_lift": 0.0308,
+        "relative_lift": 0.445,
+        "ci_low": -0.0169,
+        "ci_high": 0.0785,
+        "z_stat": 1.2643,
+        "p_value": 0.2061,
+        "significant": false
+      },
+      "sample_size_warning": "Treatment shows a higher observed qualified-lead rate, but the sample is modest and the 95% confidence interval includes zero. Do not scale the treatment to full budget yet \u2014 continue the test to reach the minimum detectable effect sample size before reallocating.",
+      "status": "completed",
+      "decision": "Continue testing \u2014 observed lift is promising but not yet statistically significant.",
+      "data_source": "synthetic"
+    }
+  ]
+}
